@@ -1,0 +1,3 @@
+[submodule "tree-sitter-formula"]
+	path = tree-sitter-formula
+	url = git@github.com:siraben/tree-sitter-formula
