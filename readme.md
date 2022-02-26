@@ -15,6 +15,7 @@ y := y;
 while ~(z=0) do
   y := y * z;
   z := z-1;
+  x := x;
 end;
 x := x;
 ```
@@ -30,5 +31,6 @@ Produces the output
 ```
 Redundant assignments:
 Redundant assignment to y at row 2 column 0
-Redundant assignment to x at row 7 column 0
+Redundant assignment to x at row 6 column 2
+Redundant assignment to x at row 8 column 0
 ```
