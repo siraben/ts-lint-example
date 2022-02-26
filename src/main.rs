@@ -1,4 +1,4 @@
-use tree_sitter::{Language, Parser, Query, QueryCursor, TextProvider};
+use tree_sitter::{Language, Parser, Query, QueryCursor};
 
 extern "C" {
     fn tree_sitter_imp() -> Language;
