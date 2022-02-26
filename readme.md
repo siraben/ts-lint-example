@@ -2,7 +2,11 @@
 Minimal complete example of how to use the tree-sitter bindings to
 perform some linting checks for the
 [Imp](https://softwarefoundations.cis.upenn.edu/lf-current/Imp.html)
-language.  Given a file `factorial.imp` with contents
+language.  See the file `src/main.rs` for more information.  It uses a
+tree-sitter query to pattern-match over the AST, iterates through the
+matches and reports them.
+
+Given a file `factorial.imp` with contents
 
 ```
 z := x;
