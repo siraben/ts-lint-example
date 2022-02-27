@@ -4,7 +4,14 @@ perform some linting checks for the
 [Imp](https://softwarefoundations.cis.upenn.edu/lf-current/Imp.html)
 language.  See the file `src/main.rs` for more information.  It uses a
 tree-sitter query to pattern-match over the AST, iterates through the
-matches and reports them.
+matches and reports them.  Planned checks include:
+
+- [x] redundant assignments
+- [ ] redundant if statement
+- [ ] always false condition
+
+Since Imp has a simple operational semantics, it can be easily proven
+that these suggestion preserve program behavior.
 
 Given a file `factorial.imp` with contents
 
