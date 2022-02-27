@@ -11,7 +11,7 @@ matches and reports them.  Planned checks include:
 - [ ] always false condition
 
 Since Imp has a simple operational semantics, it can be easily proven
-that these suggestion preserve program behavior.
+that these suggestions preserve program behavior.
 
 Given a file `factorial.imp` with contents
 
