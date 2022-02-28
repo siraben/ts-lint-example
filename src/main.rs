@@ -18,9 +18,9 @@ fn main() {
     println!("Redundant assignments:");
     let mut query_cursor = QueryCursor::new();
     let source = std::fs::read_to_string(file).unwrap();
-    let matches = query_cursor.captures(&query, tree.root_node(), source.as_bytes());
-    let mut redundant_assignments = matches
-        .flat_map(|(m, _)| m.captures)
+    let matches = query_cursor.matches(&query, tree.root_node(), source.as_bytes());
+    let redundant_assignments = matches
+        .flat_map(|m| m.captures)
         .filter_map(|c| c.node.child_by_field_name("name"))
         .map(|c| {
             format!(
@@ -31,6 +31,5 @@ fn main() {
             )
         })
         .collect::<Vec<_>>();
-    redundant_assignments.dedup();
     println!("{}", redundant_assignments.join("\n"));
 }
