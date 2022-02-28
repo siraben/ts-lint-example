@@ -7,3 +7,4 @@ while ~(z=0) do
   x := x;
 end;
 x := x;
+if x = y then x := 1 else x := 1 end

@@ -7,7 +7,7 @@ tree-sitter query to pattern-match over the AST, iterates through the
 matches and reports them.  Planned checks include:
 
 - [x] redundant assignments
-- [ ] redundant if statement
+- [x] redundant if statement
 - [ ] always false condition
 
 Since Imp has a simple operational semantics, it can be easily proven
@@ -25,6 +25,7 @@ while ~(z=0) do
   x := x;
 end;
 x := x;
+if x = y then x := 1 else x := 1 end
 ```
 
 Running the following command
@@ -37,7 +38,9 @@ Produces the output
 
 ```
 Redundant assignments:
-Redundant assignment to y at row 2 column 0
-Redundant assignment to x at row 6 column 2
-Redundant assignment to x at row 8 column 0
+Redundant assignment to y at line 3 column 1
+Redundant assignment to x at line 7 column 3
+Redundant assignment to x at line 9 column 1
+Redundant if statement:
+Redundant if statement at line 10 column 1
 ```
