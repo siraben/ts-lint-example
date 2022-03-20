@@ -31,7 +31,7 @@ if x = y then x := 1 else x := 1 end
 Running the following command
 
 ```ShellSession
-$ node index.js
+$ node index.js factorial.imp
 ```
 
 Produces the output

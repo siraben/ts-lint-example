@@ -6,8 +6,15 @@ const { Query } = Parser;
 const parser = new Parser();
 parser.setLanguage(Imp);
 
+const args = process.argv.slice(2);
+
+if (args.length != 1) {
+  console.error("Usage: node index.js <file to lint>");
+  process.exit(1);
+}
+
 // Load the file factorial.imp
-const sourceCode = readFileSync("factorial.imp", "utf8");
+const sourceCode = readFileSync(args[0], "utf8");
 const tree = parser.parse(sourceCode);
 
 // Query for redundant assignments
