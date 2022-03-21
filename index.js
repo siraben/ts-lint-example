@@ -1,10 +1,8 @@
 import Parser from "tree-sitter";
 import Imp from "tree-sitter-imp";
 import { readFileSync } from "fs";
-const { Query } = Parser;
 
-const parser = new Parser();
-parser.setLanguage(Imp);
+const { Query } = Parser;
 
 const args = process.argv.slice(2);
 
@@ -13,8 +11,12 @@ if (args.length != 1) {
   process.exit(1);
 }
 
-// Load the file factorial.imp
 const sourceCode = readFileSync(args[0], "utf8");
+
+const parser = new Parser();
+parser.setLanguage(Imp);
+
+// Load the file passed as an argument
 const tree = parser.parse(sourceCode);
 
 // Query for redundant assignments
