@@ -7,7 +7,7 @@ const { Query } = Parser;
 const args = process.argv.slice(2);
 
 if (args.length != 1) {
-  console.error("Usage: node index.js <file to lint>");
+  console.error("Usage: npm run lint <file to lint>");
   process.exit(1);
 }
 
