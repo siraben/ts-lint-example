@@ -42,7 +42,7 @@ function capturesByName(tree, query, name) {
   return formatCaptures(
     tree,
     query.captures(tree.rootNode).filter((x) => x.name == name)
-  ).map(function (x) {
+  ).map((x) => {
     delete x.name;
     return x;
   });
